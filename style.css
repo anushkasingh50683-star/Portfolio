@@ -31,3 +31,12 @@ a{  /*selects all anchor elements means the links*/
     color: var(--link-color);
     text-decoration: none;   /*Removing underline from links*/
 }
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+  height: 80px;
+}
