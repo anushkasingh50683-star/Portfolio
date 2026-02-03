@@ -1,0 +1,33 @@
+:root{ 
+    --text-color:#1a1c20;   
+    --link-color:#4a76ee;   
+    --background-color:#eeeff1;
+}
+/*
+root has higher priority than html{...}
+these are variable names --variable-name: value;
+and can be called later using var(--variable-name)
+variables are not only for colors eg --main-padding: 16px;
+                                    --font-size: 1rem;
+                                    --border-style: 1px solid black;
+variables can be defined inside any selector root is  not necessary
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+    background-color:var(--background-color);
+}
+
+a{  /*selects all anchor elements means the links*/
+    color: var(--link-color);
+    text-decoration: none;   /*Removing underline from links*/
+}
