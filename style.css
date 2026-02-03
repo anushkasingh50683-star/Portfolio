@@ -25,6 +25,10 @@ html{
 body{
     font-family: 'Poppins',sans-serif;
     background-color:var(--background-color);
+    color: var(--text-color);
+  
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 a{  /*selects all anchor elements means the links*/
