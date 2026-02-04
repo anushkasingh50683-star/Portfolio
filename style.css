@@ -4,13 +4,13 @@
     --background-color:#eeeff1;
 }
 /*
-root has higher priority than html{...}
-these are variable names --variable-name: value;
+- root has higher priority than html{...}
+- these are variable names --variable-name: value;
 and can be called later using var(--variable-name)
 variables are not only for colors eg --main-padding: 16px;
                                     --font-size: 1rem;
                                     --border-style: 1px solid black;
-variables can be defined inside any selector root is  not necessary
+- variables can be defined inside any selector root is  not necessary
 */
 *{
     margin: 0;
@@ -36,10 +36,10 @@ a{  /*selects all anchor elements means the links*/
 
 /*
 -------------------Flexbox--------------------
-display: flex is applied on the parent element
-It does NOT move the parent
-It only controls the children inside the parent
-In short = Parent gets display: flex, children get arranged.
+- display: flex is applied on the parent element
+- It does NOT move the parent
+- It only controls the children inside the parent
+- In short = Parent gets display: flex, children get arranged.
 */
 nav{
     display: flex;
@@ -49,11 +49,11 @@ nav{
     padding: 0 50px;
     height: 80px;
 /*
-nav = flex parent
-row → horizontal(optional bcz its by default)
-justify-content → left/right spacing
-align-items → vertical alignment
-padding → inner space
+- nav = flex parent
+- row → horizontal(optional bcz its by default)
+- justify-content → left/right spacing
+- align-items → vertical alignment
+- padding → inner space
 */
 }
 nav .left a{  /*Select all <a> tags that are inside <nav class="left">*/
@@ -74,4 +74,36 @@ nav .right a:last-child{
 
 nav .right a span{
     margin-left: 5px;
+}
+/*
+------Media Queries-----
+- Media queries allow CSS to change styles based on screen  size or device conditions.
+- Used for responsive design
+- Syntax: @media (condition) { CSS }
+- max-width → small screens (for mobile styles)
+- min-width → large screens (for tablet or desktop styles)
+- Media queries go at the bottom so they can override earlier styles when needed.
+                                    */                           
+
+@media(max-width:600px){    /* for mobile or small screens*/
+    /* NAVBAR */
+    nav{
+        padding:0 20px;     /*reduce padding bcz mob 
+                            screens are small*/
+    }
+
+    nav .right a{
+        font-size: 22px;    /* increase icon size*/
+    }
+
+    nav .right a:last-child{   /*make gmail normal 
+                                like other icons*/
+    color: var(--text-color);
+    background-color: transparent;  /* removes bg color */
+    padding: 0;
+    }
+ 
+    nav .right a span{     
+        display: none;  /* hide text and show only icons*/
+    }
 }
