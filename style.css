@@ -25,22 +25,53 @@ html{
 body{
     font-family: 'Poppins',sans-serif;
     background-color:var(--background-color);
-    color: var(--text-color);
-  
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 a{  /*selects all anchor elements means the links*/
     color: var(--link-color);
     text-decoration: none;   /*Removing underline from links*/
 }
-/* NAVBAR */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  padding: 0 50px;
-  height: 80px;
+/*--NAVBAR--*/
+
+/*
+-------------------Flexbox--------------------
+display: flex is applied on the parent element
+It does NOT move the parent
+It only controls the children inside the parent
+In short = Parent gets display: flex, children get arranged.
+*/
+nav{
+    display: flex;
+    flex-direction: row; /* by defualt its row */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 80px;
+/*
+nav = flex parent
+row → horizontal(optional bcz its by default)
+justify-content → left/right spacing
+align-items → vertical alignment
+padding → inner space
+*/
+}
+nav .left a{  /*Select all <a> tags that are inside <nav class="left">*/
+    color: var(--text-color);
+    font-size:22px;
+    font-weight: 600;
+}
+nav .right a{
+    color:var(--text-color);
+    margin: 0 10px;
+}
+nav .right a:last-child{
+    color: var(--background-color);
+    background-color: var(--text-color);
+    padding:  5px 15px;
+    border-radius: 5px;
+}
+
+nav .right a span{
+    margin-left: 5px;
 }
